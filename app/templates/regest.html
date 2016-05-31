@@ -1,0 +1,28 @@
+<!-- ######################################################
+#
+#Author:          whytin
+#Email:           whytin@yeah.net
+#QQ:              583501947
+#
+#Filename:        regest.html
+#Last modified:   2016-05-30 22:56
+#Description:     
+#
+######################################################-->
+
+{% extends "base.html" %}
+{% block body  %}
+	<h2> Regest </h2>
+	<form action="{{ url_for('regest') }}" method=POST>
+		<dl>
+			<dt>Username:
+			<dd><input type=text name=username>
+			<dt>Password:
+			<dd><input type=password name=password>
+			<dt>Mail:
+			<dd><input type=text name=mail>
+			<dd><input type=submit value=Regest>
+		</dl>
+	</form>
+{% endblock %}
+

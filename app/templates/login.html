@@ -1,0 +1,29 @@
+<!-- ######################################################
+#
+#Author:          whytin
+#Email:           whytin@yeah.net
+#QQ:              583501947
+#
+#Filename:        login.html
+#Last modified:   2016-05-30 22:44
+#Description:     
+#
+######################################################-->
+
+{% extends "base.html" %}
+{% block body %}
+	<h2>Log in</h2>
+	{% if error %}
+		<p class=error><strong>Error:</strong>{{ error }}</p>
+	{% endif %}
+	<form action="{{ url_for('login') }}" method=post>
+    <dl>
+      <dt>Username:
+      <dd><input type=text name=username>
+      <dt>Password:
+      <dd><input type=password name=password>
+      <dd><input type=submit value=Login>
+    </dl>
+	<dl><a href="{{ url_for('regest') }}">Resgest</a></dl>
+  </form>
+{% endblock %}

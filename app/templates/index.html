@@ -1,0 +1,22 @@
+<!-- ######################################################
+#
+#Author:          whytin
+#Email:           whytin@yeah.net
+#QQ:              583501947
+#
+#Filename:        index.html
+#Last modified:   2016-05-30 22:39
+#Description:     
+#
+######################################################-->
+
+{% extends "base.html" %}
+{% block body %}
+	{% if session.logged_in %}
+		<h2> Hello {{ session.username }} </h2>
+	{% else %}
+		<h2> Please log in</h2>
+	{% endif %}
+{% endblock %}
+	
+

@@ -1,0 +1,29 @@
+<!-- ######################################################
+#
+#Author:          whytin
+#Email:           whytin@yeah.net
+#QQ:              583501947
+#
+#Filename:        base.html
+#Last modified:   2016-05-30 22:39
+#Description:     
+#
+######################################################-->
+
+<!doctype html>
+<title>myblog</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static',filename='style.css') }}">
+<div class=page>
+	<h1>blog</h1>
+	<div class=metanav>
+	{% if not session.logged_in %}
+		<a href="{{ url_for('login') }}"> log in </a>
+	{% else %}
+		<div>{{ username }}</div><a href="{{ url_for('logout') }}"> log out </a>
+	{% endif %}
+	</div>
+	{% for message in get_flashed_messages() %}
+		<div class=flash>{{ message }}</div>
+	{% endfor %}
+	{% block body %}{% endblock %}
+</div>
